@@ -1,0 +1,20 @@
+# Intermediate files
+*.suo
+*.user
+Thumbs.db
+*conflicted*
+[Bb]in/
+[Oo]bj/
+.vs/
+
+# NuGet Packages
+*.nupkg
+**/packages/*
+/Q&A.xlsx
+
+# SonarQube
+.sonarqube/
+!CodeAnalyze/
+/ToolMigrating/Output
+*.bak
+/Bin

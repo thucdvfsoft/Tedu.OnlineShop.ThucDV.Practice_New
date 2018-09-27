@@ -5,6 +5,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using Tedu.OnlineShop.Areas.Admin.Models;
+using Tedu.OnlineShop.Common;
 
 namespace Tedu.OnlineShop.Areas.Admin.Controllers
 {
@@ -21,7 +22,7 @@ namespace Tedu.OnlineShop.Areas.Admin.Controllers
             if(ModelState.IsValid)
             {
                 var userDao = new UserDao();
-                var user = userDao.Login(model.UserName, model.Password);
+                var user = userDao.Login(model.UserName, Encryptor.MD5Hash(model.Password));
                 if(user != null)
                 {
                     var userSession = new UserLogin()
@@ -31,7 +32,7 @@ namespace Tedu.OnlineShop.Areas.Admin.Controllers
                     };
 
                     Session.Add(Common.Constants.USER_SESSION, userSession);
-                    return RedirectToAction("Index", "HomeController");
+                    return RedirectToAction("Index", "Home");
                 }
                 else
                 {

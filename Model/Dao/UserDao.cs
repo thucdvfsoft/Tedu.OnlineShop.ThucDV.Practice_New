@@ -50,7 +50,7 @@ namespace Model.Dao
             }
         }
 
-        public bool Delete(int id)
+        public bool Delete(long id)
         {
             try
             {
@@ -74,6 +74,11 @@ namespace Model.Dao
         public User GetById(long id)
         {
             return db.Users.FirstOrDefault(s => s.ID == id);
+        }
+
+        public User ViewDetail(long id)
+        {
+            return db.Users.Find(id);
         }
     }
 }

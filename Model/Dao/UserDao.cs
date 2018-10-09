@@ -22,9 +22,15 @@ namespace Model.Dao
             return user.ID;
         }
 
-        public IEnumerable<User> ListAllPaging(int page, int pageSize)
+        public IEnumerable<User> ListAllPaging(string searchString, int page, int pageSize)
         {
-            return db.Users.OrderByDescending(x => x.CreatedDate).ToPagedList(page, pageSize);
+            IQueryable<User> model = db.Users;
+            if(!string.IsNullOrEmpty(searchString))
+            {
+                model = model.Where(x => x.Name.Contains(searchString) || x.UserName.Contains(searchString));
+            }
+
+            return model.OrderByDescending(x => x.CreatedDate).ToPagedList(page, pageSize);
         }
 
         public bool Update(User entity)

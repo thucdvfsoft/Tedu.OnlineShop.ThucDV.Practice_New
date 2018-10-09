@@ -7,6 +7,9 @@
 @section header{
     Thêm mới user
 }
+
+
+
 @using (Html.BeginForm("Create", "User", FormMethod.Post))
 {
     @Html.AntiForgeryToken()

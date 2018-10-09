@@ -10,7 +10,7 @@ var config = {};
 // Examples:
 // config.language = 'pl';
 // config.skin = 'jquery-mobile';
-config.connectorPath = '';
-config.BaseUrl = '/Data/';
-config.BaseDir = '';
+//config.connectorPath = '';
+//config.BaseUrl = '/Data/';
+//config.BaseDir = '';
 CKFinder.define( config );

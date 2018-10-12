@@ -1,5 +1,6 @@
 $(function() {
     $('#side-menu').metisMenu();
+    //mmmmmmmmmmmmmm
 });
 
 //Loads the correct sidebar on window load,

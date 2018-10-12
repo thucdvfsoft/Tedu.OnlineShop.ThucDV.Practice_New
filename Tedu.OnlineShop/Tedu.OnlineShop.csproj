@@ -239,6 +239,7 @@
     <Content Include="Asset\Admin\dist\css\sb-admin-2.min.css" />
     <Content Include="Asset\Admin\dist\js\sb-admin-2.js" />
     <Content Include="Asset\Admin\dist\js\sb-admin-2.min.js" />
+    <Content Include="Asset\Admin\js\controller\UserController.js" />
     <Content Include="Asset\Admin\js\sb-admin-2.js" />
     <Content Include="Asset\Admin\vendor\bootstrap-social\bootstrap-social.css" />
     <Content Include="Asset\Admin\vendor\bootstrap\css\bootstrap.css" />
@@ -807,6 +808,7 @@
     <Content Include="Scripts\ckeditor\ckeditor.js" />
     <Content Include="Scripts\ckeditor\ckeditor.pack" />
     <Content Include="MyFiles\images_list.json" />
+    <Content Include="Areas\Admin\Views\Shared\_Navigation.cshtml" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\ckeditor\ckeditor.php" />
     <Content Include="Scripts\ckeditor\ckeditor_basic.js" />

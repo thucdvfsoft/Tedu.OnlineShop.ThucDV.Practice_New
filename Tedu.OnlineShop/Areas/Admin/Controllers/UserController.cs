@@ -41,10 +41,12 @@ namespace Tedu.OnlineShop.Areas.Admin.Controllers
                 long id = dao.Insert(user);
                 if (id > 0)
                 {
+                    SetAlert("Thêm user thành công", "success");
                     return RedirectToAction("Index", "User");
                 }
                 else
                 {
+                    SetAlert("Thêm user không thành công", "warning");
                     ModelState.AddModelError("", "Thêm user không thành công");
                 }
             }
@@ -65,10 +67,12 @@ namespace Tedu.OnlineShop.Areas.Admin.Controllers
                 bool result = dao.Update(user);
                 if (result)
                 {
+                    SetAlert("Cập nhật user thành công", "success");
                     return RedirectToAction("Index", "User");
                 }
                 else
                 {
+                    SetAlert("Cập nhật user không thành công", "warning");
                     ModelState.AddModelError("", "Cập nhật user không thành công");
                 }
             }
@@ -82,6 +86,15 @@ namespace Tedu.OnlineShop.Areas.Admin.Controllers
             bool result = dao.Delete(id);
 
             return RedirectToAction("Index");
+        }
+
+        [HttpPost]
+        public JsonResult ChangeStatus(long id)
+        {
+            var result = new UserDao().ChangeStatus(id);
+            return Json(new {
+                status = result
+            });
         }
     }
 }
